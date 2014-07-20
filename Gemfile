@@ -1,3 +1,3 @@
 source 'https://rubygems.org'
 
-gem 'weather-underground', '~> 1.1.1'
+gem 'forecast_io', '~> 2.0.0'

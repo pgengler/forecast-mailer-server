@@ -1,22 +1,18 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    happymapper (0.4.1)
-      libxml-ruby (~> 2.0)
-    libxml-ruby (2.7.0)
-    mime-types (2.3)
-    netrc (0.7.7)
-    rest-client (1.7.2)
-      mime-types (>= 1.16, < 3.0)
-      netrc (~> 0.7)
-    temperature (1.2)
-    weather-underground (1.1.1)
-      happymapper
-      rest-client
-      temperature (>= 1.0.0)
+    faraday (0.9.0)
+      multipart-post (>= 1.2, < 3)
+    forecast_io (2.0.0)
+      faraday
+      hashie
+      multi_json
+    hashie (3.2.0)
+    multi_json (1.10.1)
+    multipart-post (2.0.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  weather-underground (~> 1.1.1)
+  forecast_io (~> 2.0.0)
