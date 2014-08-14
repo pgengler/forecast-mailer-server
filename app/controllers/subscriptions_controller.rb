@@ -9,6 +9,7 @@ class SubscriptionsController < ApplicationController
 
 	def create
 		@subscription = Subscription.create!(subscription_params)
+		redirect_to subscriptions_path
 	end
 
 	private

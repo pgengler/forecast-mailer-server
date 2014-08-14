@@ -19,4 +19,10 @@ class SubscriptionsControllerTest < ActionController::TestCase
 		assert_equal Date.parse('2014-01-01'), @subscription.start
 		assert_equal Date.parse('2014-12-31'), @subscription.end
 	end
+
+	test "redirects to index after creating a new subscription" do
+		post :create, subscription: { location: 'Over there', email: 'example@example.com' }
+		assert_response :redirect
+		assert_redirected_to subscriptions_path
+	end
 end
