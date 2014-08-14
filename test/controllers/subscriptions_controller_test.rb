@@ -5,4 +5,9 @@ class SubscriptionsControllerTest < ActionController::TestCase
 		get :index
 		assert_select 'tr.subscription', Subscription.count
 	end
+
+	test "has a 'new' form" do
+		get :new
+		assert_select 'form'
+	end
 end

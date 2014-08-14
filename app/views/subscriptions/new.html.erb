@@ -1,2 +1,24 @@
-<h1>Subscriptions#new</h1>
-<p>Find me in app/views/subscriptions/new.html.erb</p>
+<h1>Create new subscription</h1>
+<%= form_for(@subscription) do |f| %>
+	<label>
+		Location to send the forecast for:
+		<%= f.text_field :location %>
+	</label>
+	<br>
+	<label>
+		Email to receive forecast:
+		<%= f.text_field :email %>
+	</label>
+	<br>
+	<label>
+		(Optional) Date to start receiving emailed forecasts
+		<%= f.text_field :start %>
+	</label>
+	<br>
+	<label>
+		(Optional) Date to stop receiving emailed forecasts
+		<%= f.text_field :end %>
+	</label>
+	<br>
+	<%= f.submit %>
+<% end %>
