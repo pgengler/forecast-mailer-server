@@ -12,6 +12,10 @@ class SubscriptionsController < ApplicationController
 		redirect_to subscriptions_path
 	end
 
+	def edit
+		@subscription = Subscription.find(params[:id])
+	end
+
 	private
 
 	def subscription_params

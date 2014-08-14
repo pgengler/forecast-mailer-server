@@ -25,4 +25,10 @@ class SubscriptionsControllerTest < ActionController::TestCase
 		assert_response :redirect
 		assert_redirected_to subscriptions_path
 	end
+
+	test "shows an 'edit' form" do
+		get :edit, id: subscriptions(:no_dates)
+		assert_response :success
+		assert_select 'form'
+	end
 end
