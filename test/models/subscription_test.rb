@@ -12,4 +12,10 @@ class SubscriptionTest < ActiveSupport::TestCase
 			Subscription.create! location: 'New York, NY', start: 1.day.ago, end: 1.day.from_now
 		end
 	end
+
+	test "does not require start or end" do
+		assert_difference 'Subscription.count' do
+			Subscription.create! location: 'Rome', email: 'test@example.com'
+		end
+	end
 end
