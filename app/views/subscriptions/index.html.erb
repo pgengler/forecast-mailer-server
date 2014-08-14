@@ -1,2 +1,23 @@
-<h1>Subscriptions#index</h1>
-<p>Find me in app/views/subscriptions/index.html.erb</p>
+<h1>Subscriptions</h1>
+
+<table>
+	<thead>
+		<tr>
+			<th>Sent to</th>
+			<th>Location</th>
+			<th>Start</th>
+			<th>End</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @subscriptions.each do |subscription| %>
+		<tr class="subscription">
+			<td><%= subscription.email %></td>
+			<td><%= subscription.location %></td>
+			<td><%= subscription.start %></td>
+			<td><%= subscription.end %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+

@@ -1,13 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  location: MyString
-  start: 2014-08-14
-  end: 2014-08-14
-  email: MyString
+no_dates:
+  location: The Middle of Nowhere
+  start:
+  end:
+  email: test@example.com
 
-two:
-  location: MyString
+start_date:
+  location: New York, NY
   start: 2014-08-14
+  end:
+  email: test@example.com
+
+end_date:
+  location: KFRG
+  start:
   end: 2014-08-14
-  email: MyString
+  email: test@example.com
