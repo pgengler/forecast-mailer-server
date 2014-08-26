@@ -1,11 +1,11 @@
 class BackgroundGeocoder
 	include Sidekiq::Worker
 
-	def perform(id)
-		obj = Subscription.find(id)
-		obj.geocode
-		if obj.geocoded?
-			obj.save
+	def perform(subscription_id)
+		subscription = Subscription.find(subscription_id)
+		subscription.geocode
+		if subscription.geocoded?
+			subscription.save
 		else
 			raise Geocoder::OverQueryLimitError
 		end
