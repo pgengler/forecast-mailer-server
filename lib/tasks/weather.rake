@@ -13,7 +13,7 @@ namespace :weather do
 		Subscription.all.each do |subscription|
 			if subscription.geocoded?
 				forecast = get_forecast(subscription)
-				p forecast
+				ForecastMailer.daily(subscription, forecast).deliver
 			end
 		end
 	end
