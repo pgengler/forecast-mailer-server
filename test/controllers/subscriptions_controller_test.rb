@@ -31,4 +31,14 @@ class SubscriptionsControllerTest < ActionController::TestCase
 		assert_response :success
 		assert_select 'form'
 	end
+
+	test "can update values for a subscription" do
+		put :update, id: subscriptions(:no_dates), subscription: { email: 'nobody@example.com', location: 'The Middle of Somewhere', start: '2014-01-01', end: '2014-02-01' }
+
+		subscription = assigns(:subscription)
+		assert_equal 'nobody@example.com', subscription.email
+		assert_equal 'The Middle of Somewhere', subscription.location
+		assert_equal Date.parse('2014-01-01'), subscription.start
+		assert_equal Date.parse('2014-02-01'), subscription.end
+	end
 end

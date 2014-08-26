@@ -16,6 +16,11 @@ class SubscriptionsController < ApplicationController
 		@subscription = Subscription.find(params[:id])
 	end
 
+	def update
+		@subscription = Subscription.find(params[:id])
+		@subscription.update!(subscription_params)
+	end
+
 	private
 
 	def subscription_params
