@@ -9,4 +9,5 @@ gem 'jquery-rails'
 gem 'spring',        group: :development
 
 gem 'whenever', require: false
+gem 'geocoder'
 gem 'forecast_io'
