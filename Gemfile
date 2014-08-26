@@ -9,3 +9,4 @@ gem 'jquery-rails'
 gem 'spring',        group: :development
 
 gem 'whenever', require: false
+gem 'forecast_io'
