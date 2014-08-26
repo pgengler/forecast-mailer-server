@@ -7,3 +7,5 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 
 gem 'spring',        group: :development
+
+gem 'whenever', require: false
