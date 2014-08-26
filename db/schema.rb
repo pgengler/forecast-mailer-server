@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140814185017) do
+ActiveRecord::Schema.define(version: 20140826171614) do
 
   create_table "subscriptions", force: true do |t|
     t.string   "location"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20140814185017) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
 end
