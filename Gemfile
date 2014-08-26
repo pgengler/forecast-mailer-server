@@ -13,3 +13,11 @@ gem 'sidekiq'
 gem 'whenever', require: false
 gem 'geocoder'
 gem 'forecast_io'
+
+group :development do
+	gem 'capistrano', '~> 3.0'
+	gem 'capistrano-rails'
+	gem 'capistrano-rvm'
+	gem 'capistrano-bundler'
+	gem 'capistrano3-unicorn'
+end
