@@ -1,4 +1,7 @@
 class ForecastMailer < ActionMailer::Base
+	add_template_helper(MailHelper)
+	default from: 'weather@projects.pgengler.net'
+
 	def daily(subscription, forecast)
 		@forecast = forecast
 		@location = subscription.location
