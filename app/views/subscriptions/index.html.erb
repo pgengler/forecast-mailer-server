@@ -7,6 +7,7 @@
 			<th>Location</th>
 			<th>Start</th>
 			<th>End</th>
+			<th>&nbsp;</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -16,6 +17,11 @@
 			<td><%= subscription.location %></td>
 			<td><%= subscription.start %></td>
 			<td><%= subscription.end %></td>
+			<td>
+				<%= link_to 'Edit', edit_subscription_path(subscription) %>
+				|
+				<%= link_to 'Delete', subscription_path(subscription), method: 'delete' %>
+			</td>
 		</tr>
 		<% end %>
 	</tbody>
