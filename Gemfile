@@ -14,6 +14,8 @@ gem 'whenever', require: false
 gem 'geocoder'
 gem 'forecast_io'
 
+gem 'unicorn'
+
 group :development do
 	gem 'capistrano', '~> 3.0'
 	gem 'capistrano-rails'
