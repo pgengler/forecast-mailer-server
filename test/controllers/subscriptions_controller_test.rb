@@ -53,6 +53,11 @@ class SubscriptionsControllerTest < ActionController::TestCase
 		assert_redirected_to subscriptions_path
 	end
 
+	test "displays a message after updating a subscription" do
+		put :update, id: subscriptions(:no_dates), subscription: { start: '2014-01-01' }
+		assert_equal 'Subscription updated', flash[:success]
+	end
+
 	test "can delete a subscription" do
 		assert_difference 'Subscription.count', -1 do
 			delete :destroy, id: subscriptions(:no_dates)
