@@ -26,6 +26,11 @@ class SubscriptionsControllerTest < ActionController::TestCase
 		assert_redirected_to subscriptions_path
 	end
 
+	test "displays a message after creating a new subscription" do
+		post :create, subscription: { location: 'Over there', email: 'dummy@example.com' }
+		assert_equal 'Subscription created', flash[:success]
+	end
+
 	test "shows an 'edit' form" do
 		get :edit, id: subscriptions(:no_dates)
 		assert_response :success

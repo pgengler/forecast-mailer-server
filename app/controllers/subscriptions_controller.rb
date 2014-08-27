@@ -9,6 +9,7 @@ class SubscriptionsController < ApplicationController
 
 	def create
 		@subscription = Subscription.create!(subscription_params)
+		flash[:success] = 'Subscription created'
 		redirect_to subscriptions_path
 	end
 
