@@ -8,6 +8,8 @@ gem 'jquery-rails'
 
 gem 'spring',        group: :development
 
+gem 'foundation-rails'
+
 gem 'sidekiq'
 
 gem 'whenever', require: false
