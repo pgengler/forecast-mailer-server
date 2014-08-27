@@ -24,6 +24,7 @@ class SubscriptionsController < ApplicationController
 	def destroy
 		@subscription = Subscription.find(params[:id])
 		@subscription.destroy!
+		flash[:success] = 'Subscription deleted'
 		redirect_to subscriptions_path
 	end
 

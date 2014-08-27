@@ -53,4 +53,9 @@ class SubscriptionsControllerTest < ActionController::TestCase
 		assert_response :redirect
 		assert_redirected_to subscriptions_path
 	end
+
+	test "displays a message after destroying a subscription" do
+		delete :destroy, id: subscriptions(:no_dates)
+		assert_equal 'Subscription deleted', flash[:success]
+	end
 end
