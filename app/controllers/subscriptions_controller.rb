@@ -21,6 +21,12 @@ class SubscriptionsController < ApplicationController
 		@subscription.update!(subscription_params)
 	end
 
+	def destroy
+		@subscription = Subscription.find(params[:id])
+		@subscription.destroy!
+		redirect_to subscriptions_path
+	end
+
 	private
 
 	def subscription_params

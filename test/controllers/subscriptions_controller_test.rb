@@ -41,4 +41,10 @@ class SubscriptionsControllerTest < ActionController::TestCase
 		assert_equal Date.parse('2014-01-01'), subscription.start
 		assert_equal Date.parse('2014-02-01'), subscription.end
 	end
+
+	test "can delete a subscription" do
+		assert_difference 'Subscription.count', -1 do
+			delete :destroy, id: subscriptions(:no_dates)
+		end
+	end
 end
