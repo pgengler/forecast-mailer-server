@@ -23,4 +23,5 @@ group :development do
 	gem 'capistrano-rvm'
 	gem 'capistrano-bundler'
 	gem 'capistrano3-unicorn'
+	gem 'capistrano-sidekiq'
 end
