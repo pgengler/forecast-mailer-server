@@ -47,4 +47,10 @@ class SubscriptionsControllerTest < ActionController::TestCase
 			delete :destroy, id: subscriptions(:no_dates)
 		end
 	end
+
+	test "redirects back to the index page after destroying a subscription" do
+		delete :destroy, id: subscriptions(:no_dates)
+		assert_response :redirect
+		assert_redirected_to subscriptions_path
+	end
 end
