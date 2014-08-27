@@ -1,4 +1,4 @@
-class ForecastMailer < ActionMailer::Base
+class WeatherForecastMailer < ActionMailer::Base
 	add_template_helper(MailHelper)
 	default from: 'Weather Forecast <weather@projects.pgengler.net>'
 
