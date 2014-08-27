@@ -14,6 +14,7 @@ gem 'whenever', require: false
 gem 'geocoder'
 gem 'forecast_io'
 
+gem 'dotenv-rails'
 gem 'unicorn'
 
 group :development do
