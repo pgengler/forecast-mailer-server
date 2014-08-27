@@ -8,7 +8,7 @@ class ForecastMailerWorker
 	end
 
 	def self.send_forecast_emails
-		Subscription.all.each do |subscription|
+		Subscription.active.each do |subscription|
 			if subscription.geocoded?
 				perform_async(subscription.id)
 			end
