@@ -47,6 +47,12 @@ class SubscriptionsControllerTest < ActionController::TestCase
 		assert_equal Date.parse('2014-02-01'), subscription.end
 	end
 
+	test "redirects to the index page after updating a subscription" do
+		put :update, id: subscriptions(:no_dates), subscription: { email: 'bill@example.com' }
+		assert_response :redirect
+		assert_redirected_to subscriptions_path
+	end
+
 	test "can delete a subscription" do
 		assert_difference 'Subscription.count', -1 do
 			delete :destroy, id: subscriptions(:no_dates)

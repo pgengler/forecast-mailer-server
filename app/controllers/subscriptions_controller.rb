@@ -20,6 +20,7 @@ class SubscriptionsController < ApplicationController
 	def update
 		@subscription = Subscription.find(params[:id])
 		@subscription.update!(subscription_params)
+		redirect_to subscriptions_path
 	end
 
 	def destroy
