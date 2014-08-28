@@ -6,7 +6,7 @@ class Subscription < ActiveRecord::Base
 	after_commit :geocode_in_background, on: [ :create, :update ]
 
 	def self.active
-		where('(start IS NULL AND end IS NULL) OR (start IS NULL AND ? <= end) OR (end IS NULL AND start <= ?) OR (? BETWEEN start AND end)', Date.today, Date.today, Date.today)
+		where('("start" IS NULL AND "end" IS NULL) OR ("start" IS NULL AND ? <= "end") OR ("end" IS NULL AND "start" <= ?) OR (? BETWEEN "start" AND "end")', Date.today, Date.today, Date.today)
 	end
 
 	private

@@ -18,4 +18,8 @@ class SubscriptionTest < ActiveSupport::TestCase
 			Subscription.create! location: 'Rome', email: 'test@example.com'
 		end
 	end
+
+	test "'active' method returns only active subscriptions" do
+		assert_equal 2, Subscription.active.count
+	end
 end
