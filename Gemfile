@@ -27,3 +27,5 @@ group :development do
 	gem 'capistrano3-unicorn'
 	gem 'capistrano-sidekiq'
 end
+
+gem 'sinatra'
