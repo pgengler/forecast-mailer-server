@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140826171614) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "subscriptions", force: true do |t|
     t.string   "location"
     t.date     "start"
