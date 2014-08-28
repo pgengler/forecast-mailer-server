@@ -2,7 +2,7 @@ class ForecastMailerWorker
 	include Sidekiq::Worker
 
 	def perform(subscription_id)
-		subscription = Subscription.find(id)
+		subscription = Subscription.find(subscription_id)
 		forecast = get_forecast(subscription)
 		WeatherForecastMailer.daily(subscription, forecast).deliver
 	end
