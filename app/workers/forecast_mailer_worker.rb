@@ -4,6 +4,7 @@ class ForecastMailerWorker
 	def perform(subscription_id)
 		subscription = Subscription.find(subscription_id)
 		forecast = get_forecast(subscription)
+		Time.zone = subscription.timezone
 		WeatherForecastMailer.daily(subscription, forecast).deliver
 	end
 
