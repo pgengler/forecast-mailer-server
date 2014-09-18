@@ -4,7 +4,9 @@
 		<% if i % 3 == 0 %><tr><% end %>
 		<td width="25%" valign="top">
 			<strong><%= date(f.time).strftime('%A, %B %d') %></strong>
-			<br>
+			<p style="margin-left: 3em">
+				<%= icon_tag(f.icon) %>
+			</p>
 			Chance of precipitation: <%= (f.precipProbability*100).to_i %>%
 			<br>
 			High: <%= f.temperatureMax %>°C
@@ -16,6 +18,7 @@
 			Sunrise: <%= date(f.sunriseTime).strftime('%H:%M') %>
 			<br>
 			Sunset: <%= date(f.sunsetTime).strftime('%H:%M') %>
+			<br>
 		</td>
 		<% if i % 3 == 2 %></tr><% end %>
 	<% end %>
