@@ -4,7 +4,7 @@ pid "#{root}/tmp/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn.log"
 stdout_path "#{root}/log/unicorn.log"
 
-listen 5000
+listen "/tmp/forcast-mailer.unicorn.sock"
 worker_processes 2
 timeout 30
 
