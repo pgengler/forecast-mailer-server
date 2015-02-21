@@ -3,12 +3,10 @@ lock '3.2.1'
 
 set :application, 'forecast-mailer'
 set :repo_url, 'git@github.com:pgengler/forecast-mailer.git'
-
-# Default branch is :master
-# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
+set :ssh_options, { forward_agent: true }
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/srv/apps/weather'
+set :deploy_to, '/srv/apps/forecast-mailer'
 
 # Default value for :linked_files is []
 set :linked_files, %w{ .env }
@@ -20,9 +18,8 @@ namespace :deploy do
 
 	desc 'Restart application'
 	task :restart do
-		on roles(:app), in: :sequence, wait: 5 do
-			invoke 'unicorn:stop'
-			invoke 'unicorn:start'
+		on roles(:app) do
+			invoke 'puma:restart'
 		end
 	end
 

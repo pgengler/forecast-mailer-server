@@ -17,14 +17,14 @@ gem 'geocoder'
 gem 'forecast_io'
 
 gem 'dotenv-rails'
-gem 'unicorn'
+gem 'puma'
 
 group :development do
 	gem 'capistrano', '~> 3.0'
 	gem 'capistrano-rails'
 	gem 'capistrano-rvm'
 	gem 'capistrano-bundler'
-	gem 'capistrano3-unicorn'
+	gem 'capistrano3-puma'
 	gem 'capistrano-sidekiq'
 end
 
