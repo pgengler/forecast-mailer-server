@@ -9,9 +9,9 @@
 			</p>
 			Chance of precipitation: <%= (f.precipProbability*100).to_i %>%
 			<br>
-			High: <%= f.temperatureMax %>°C
+			High: <%= f.temperatureMax %>°<%= @temperature_unit %>
 			<br>
-			Low: <%= f.temperatureMin %>°C
+			Low: <%= f.temperatureMin %>°<%= @temperature_unit %>
 			<br><br>
 			<%= f.summary %>
 			<br><br>

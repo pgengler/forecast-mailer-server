@@ -12,12 +12,13 @@ class SubscriptionsControllerTest < ActionController::TestCase
 	end
 
 	test "creates a new subscription with the given values" do
-		post :create, params: { subscription: { location: 'Nowheresville', email: 'test@example.com', start: '2014-01-01', end: '2014-12-31' } }
+		post :create, params: { subscription: { location: 'Nowheresville', email: 'test@example.com', start: '2014-01-01', end: '2014-12-31', units: 'auto' } }
 		@subscription = assigns(:subscription)
 		assert_equal 'Nowheresville', @subscription.location
 		assert_equal 'test@example.com', @subscription.email
 		assert_equal Date.parse('2014-01-01'), @subscription.start
 		assert_equal Date.parse('2014-12-31'), @subscription.end
+		assert_equal 'auto', @subscription.units
 	end
 
 	test "redirects to index after creating a new subscription" do

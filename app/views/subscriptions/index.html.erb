@@ -7,7 +7,7 @@
 <% if flash[:success] %>
 <div class="row">
 	<div class="large-6 columns">
-		<div data-alert class="alert-box success">
+		<div data-alert class="callout success">
 			<%= flash[:success] %>
 		</div>
 	</div>
@@ -23,6 +23,7 @@
 					<th>Location</th>
 					<th>Start</th>
 					<th>End</th>
+					<th>Units</th>
 					<th>&nbsp;</th>
 				</tr>
 			</thead>
@@ -33,6 +34,7 @@
 					<td><%= subscription.location %></td>
 					<td><%= subscription.start %></td>
 					<td><%= subscription.end %></td>
+					<td><%= subscription.units %></td>
 					<td>
 						<%= link_to 'Edit', edit_subscription_path(subscription) %>
 						|

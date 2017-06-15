@@ -18,6 +18,15 @@
 	</div>
 
 	<div class="row">
+		<div class="large-12 columns">
+			<label>
+				Units:
+				<%= f.select(:units, [ [ 'SI', 'si' ], [ 'US', 'us' ], [ 'Automatic', 'auto' ] ]) %>
+			</label>
+		</div>
+	</div>
+
+	<div class="row">
 		<div class="large-6 columns">
 			<label>
 				(Optional) Date to start receiving emailed forecasts:
