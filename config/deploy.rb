@@ -6,7 +6,7 @@ set :repo_url, 'git@github.com:pgengler/forecast-mailer.git'
 set :ssh_options, { forward_agent: true }
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/srv/apps/forecast-mailer'
+set :deploy_to, '/srv/apps/forecast-mailer/server'
 
 # Default value for :linked_files is []
 set :linked_files, %w{ .env }
