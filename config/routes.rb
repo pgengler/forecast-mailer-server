@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-	resources :subscriptions
-
-	root to: 'subscriptions#index'
+  scope :api do
+    jsonapi_resources :subscriptions
+  end
 end
