@@ -11,7 +11,7 @@ gem 'geocoder'
 gem 'forecast_io'
 
 gem 'dotenv-rails'
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 3.12'
 
 group :development do
   gem 'spring'
