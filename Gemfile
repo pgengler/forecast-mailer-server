@@ -8,6 +8,7 @@ gem 'sidekiq'
 
 gem 'whenever', require: false
 gem 'geocoder'
+gem 'openweathermap', '~> 0.2.3'
 
 gem 'dotenv-rails'
 gem 'puma', '~> 3.12'
