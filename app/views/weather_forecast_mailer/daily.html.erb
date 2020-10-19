@@ -1,6 +1,6 @@
 <h1>Forecast for <%= @location %></h1>
 <table>
-	<% @forecast.daily['data'].each_with_index do |f, i| %>
+	<% @forecast.days.each_with_index do |f, i| %>
 		<% if i % 3 == 0 %><tr><% end %>
 		<td width="25%" valign="top">
 			<strong><%= date(f.time).strftime('%A, %B %d') %></strong>
