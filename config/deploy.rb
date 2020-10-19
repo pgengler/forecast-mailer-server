@@ -1,5 +1,5 @@
-# config valid only for Capistrano 3.8
-lock '3.8.1'
+# config valid only for Capistrano 3.14
+lock '3.14.1'
 
 set :application, 'forecast-mailer'
 set :repo_url, 'git@github.com:pgengler/forecast-mailer.git'

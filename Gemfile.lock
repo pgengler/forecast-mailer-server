@@ -179,7 +179,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  capistrano (~> 3.0)
+  capistrano (~> 3.14.1)
   capistrano-bundler
   capistrano-rails
   capistrano-rvm
