@@ -40,9 +40,8 @@ module OpenWeatherMap
       DateTime.strptime(@data['dt'].to_s, '%s')
     end
 
-    def icon_url
-      icon = @data['weather'].first['icon']
-      "http://openweathermap.org/img/wn/#{icon}@2x.png"
+    def icon
+      @data['weather'].first['icon']
     end
 
     def summary

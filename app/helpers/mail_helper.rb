@@ -4,6 +4,6 @@ module MailHelper
 	end
 
 	def icon_tag(icon_name)
-		image_tag("http://images.pgengler.net/weather/#{icon_name}.gif")
+		image_tag("https://openweathermap.org/img/wn/#{icon_name}@2x.png")
 	end
 end
