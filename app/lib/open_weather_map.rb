@@ -41,7 +41,20 @@ module OpenWeatherMap
     end
 
     def icon
-      @data['weather'].first['icon']
+      case @data['weather'].first['icon']
+      when '01'
+        'clear-day'
+      when '02', '03'
+        'partly-cloudy-day'
+      when '04'
+        'cloudy'
+      when '09', '10', '11'
+        'rain'
+      when '13'
+        'snow'
+      when '50'
+        'fog'
+      end
     end
 
     def summary
