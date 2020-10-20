@@ -5,7 +5,7 @@
 		<td width="25%" valign="top">
 			<strong><%= f.date.strftime('%A, %B %d') %></strong>
 			<p style="margin-left: 3em">
-				<%= icon_tag(f.icon_url) %>
+				<%= icon_tag(f.icon) %>
 			</p>
 			Chance of precipitation: <%= (f.precipitation_probability*100).to_i %>%
 			<br>
