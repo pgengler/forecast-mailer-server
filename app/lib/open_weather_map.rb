@@ -25,6 +25,10 @@ module OpenWeatherMap
     def days
       @response['daily'].map { |day| ForecastDay.new(day) }
     end
+
+    def timezone
+      @response['timezone']
+    end
   end
 
   class ForecastDay
