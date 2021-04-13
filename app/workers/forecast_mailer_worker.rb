@@ -20,7 +20,7 @@ class ForecastMailerWorker
 
 	def get_forecast(subscription)
 		api_key = Rails.application.secrets.openweathermap_api_key
-		units = subscription.units == 'en' ? 'imperial' : 'metric'
+		units = subscription.units == 'us' ? 'imperial' : 'metric'
 		api = OpenWeatherMap::API.new(api_key)
 		api.forecast(subscription.latitude, subscription.longitude, units)
 	end
