@@ -11,7 +11,7 @@ gem 'geocoder'
 gem 'openweathermap', '~> 0.2.3'
 
 gem 'dotenv-rails'
-gem 'puma', '~> 3.12', '< 5.0'
+gem 'puma', '~> 4.3'
 
 group :development do
   gem 'spring'
