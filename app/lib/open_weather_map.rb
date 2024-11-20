@@ -9,7 +9,7 @@ module OpenWeatherMap
     end
 
     def forecast(latitude, longitude, units)
-      url = "https://api.openweathermap.org/data/2.5/onecall?lat=#{latitude}&lon=#{longitude}&units=#{units}&exclude=current,minutely,hourly,alerts&appid=#{@api_key}"
+      url = "https://api.openweathermap.org/data/3.0/onecall?lat=#{latitude}&lon=#{longitude}&units=#{units}&exclude=current,minutely,hourly,alerts&appid=#{@api_key}"
 
       response = Net::HTTP.get(URI.parse(url))
 
