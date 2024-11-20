@@ -62,8 +62,7 @@ module OpenWeatherMap
     end
 
     def summary
-      # @data['weather'].first['description']
-      @data['summary']
+      @data['weather'].first['description']
     end
 
     def low
