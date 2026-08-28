@@ -1,17 +1,15 @@
-class ForecastMailerWorker
-	include Sidekiq::Worker
-
+class ForecastMailerWorker < ApplicationJob
 	def perform(subscription_id)
 		subscription = Subscription.find(subscription_id)
 		forecast = get_forecast(subscription)
 		Time.zone = forecast.timezone
-		WeatherForecastMailer.daily(subscription, forecast).deliver
+		WeatherForecastMailer.daily(subscription, forecast).deliver_now
 	end
 
 	def self.send_forecast_emails
 		Subscription.active.each do |subscription|
 			if subscription.geocoded?
-				perform_async(subscription.id)
+				perform_later(subscription.id)
 			end
 		end
 	end
@@ -19,7 +17,7 @@ class ForecastMailerWorker
 	private
 
 	def get_forecast(subscription)
-		api_key = Rails.application.secrets.openweathermap_api_key
+		api_key = Rails.application.credentials.openweathermap_api_key
 		units = subscription.units == 'us' ? 'imperial' : 'metric'
 		api = OpenWeatherMap::API.new(api_key)
 		api.forecast(subscription.latitude, subscription.longitude, units)

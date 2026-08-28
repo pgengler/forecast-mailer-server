@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Run database migrations and prepare the Solid Queue schema before deploying.
+echo "Running db:prepare..."
+kamal app exec --reuse --quiet "bin/rails db:prepare"
