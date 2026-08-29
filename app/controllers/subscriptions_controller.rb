@@ -1,2 +1,2 @@
-class SubscriptionsController < JSONAPI::ResourceController
+class SubscriptionsController < JSONAPI::ResourceControllerMetal
 end
