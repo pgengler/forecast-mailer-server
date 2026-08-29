@@ -25,6 +25,11 @@ ENV RAILS_ENV="production" \
 # Throw-away build stage to reduce size of the final image
 FROM base AS build
 
+# Install git (needed by Bundler to fetch gems from git repositories)
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y git && \
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
 # Install application gems
 COPY Gemfile Gemfile.lock ./
 RUN bundle install && \
