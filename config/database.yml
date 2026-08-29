@@ -26,22 +26,3 @@ test:
 production:
   <<: *default
   url: <%= ENV["DATABASE_URL"] %>
-
-# Solid Queue uses a separate database connection (same Postgres instance).
-# In production it shares DATABASE_URL; in dev/test it uses the app database.
-queue: &queue
-  <<: *default
-
-production_queue:
-  <<: *queue
-  url: <%= ENV["DATABASE_URL"] %>
-
-development_queue:
-  <<: *queue
-  database: forecast_mailer_development
-  host: localhost
-
-test_queue:
-  <<: *queue
-  database: forecast_mailer_test
-  host: localhost
