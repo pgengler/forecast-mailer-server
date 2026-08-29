@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
-# If running the rails server or jobs, ensure database is prepared
-if [ "$1" = "./bin/rails" ] || [ "$1" = "bin/rails" ] || [ "$1" = "./bin/jobs" ] || [ "$1" = "bin/jobs" ]; then
+# If running the rails server (via Thruster) or jobs, ensure database is prepared
+if [ "$1" = "./bin/thrust" ] || [ "$1" = "bin/thrust" ] || [ "$1" = "./bin/jobs" ] || [ "$1" = "bin/jobs" ]; then
   ./bin/rails db:prepare
 fi
 
