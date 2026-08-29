@@ -25,9 +25,9 @@ ENV RAILS_ENV="production" \
 # Throw-away build stage to reduce size of the final image
 FROM base AS build
 
-# Install git (needed by Bundler to fetch gems from git repositories)
+# Install build tools, git (needed for native gem extensions + git-based gems)
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y git && \
+    apt-get install --no-install-recommends -y build-essential git libyaml-dev pkg-config && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Install application gems
