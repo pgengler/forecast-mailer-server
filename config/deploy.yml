@@ -5,18 +5,17 @@ service: forecast-mailer
 image: pgengler/forecast-mailer
 
 # Deploy to these servers.
+# Kamal's default Docker network is already named "kamal", so no need to
+# set options: network — the app container joins it automatically and can
+# reach the shared postgres16 container by name.
 servers:
   web:
     hosts:
       - hyperion.pgengler.net
-    options:
-      network: kamal
   job:
     hosts:
       - hyperion.pgengler.net
     cmd: bin/jobs
-    options:
-      network: kamal
 
 # Use a different SSH user than root.
 ssh:
@@ -65,5 +64,4 @@ env:
 #   db:
 #     ...
 
-# Hooks are automatically picked up from .kamal/hooks/ (pre-deploy runs
-# db:prepare before each deploy — see .kamal/hooks/pre-deploy).
+# db:prepare runs via the docker-entrypoint on each container boot.
