@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+# binstub for the Thruster proxy binary.
+# Thruster ships platform-specific binaries inside the gem; this binstub
+# delegates to the correct one via `bundle exec thrust`.
+exec "bundle", "exec", "thrust", *ARGV

@@ -1,0 +1,67 @@
+# Name of your application. Used to uniquely configure containers.
+service: forecast-mailer
+
+# Name of the container image.
+image: pgengler/forecast-mailer
+
+# Deploy to these servers.
+# Kamal's default Docker network is already named "kamal", so no need to
+# set options: network — the app container joins it automatically and can
+# reach the shared postgres16 container by name.
+servers:
+  web:
+    hosts:
+      - hyperion.pgengler.net
+  job:
+    hosts:
+      - hyperion.pgengler.net
+    cmd: bin/jobs
+
+# Use a different SSH user than root.
+ssh:
+  user: apps
+
+# Enable SSL auto certification via Let's Encrypt (default for Kamal).
+# This app uses nginx for SSL termination; kamal-proxy runs plain HTTP on
+# host port 8081 (shared with other apps). Do NOT enable ssl here.
+proxy:
+  ssl: false
+  host: forecast-mailer.pgengler.net
+  # app_port: 80  # Thruster listens on port 80 inside the container (default)
+  healthcheck:
+    path: /up
+    interval: 3
+    timeout: 3
+  # Do NOT set proxy.run.* — the shared kamal-proxy is already booted on
+  # host port 8081 by other apps. `kamal deploy` only updates routing.
+
+# Credentials for your image host.
+registry:
+  server: ghcr.io
+  username: pgengler
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+# Configure builder setup.
+builder:
+  arch: amd64
+
+# Inject ENV variables into containers (secrets come from .kamal/secrets).
+env:
+  clear:
+    RAILS_ENV: production
+    DB_HOST: postgres16
+  secret:
+    - RAILS_MASTER_KEY
+    - DATABASE_URL
+
+# Use the credentials from the Rails encrypted credentials for Kamal secrets.
+# secrets:
+#   - RAILS_MASTER_KEY
+
+# Use accessory databases, etc. (none — postgres16 is managed externally).
+# accessories:
+#   db:
+#     ...
+
+# db:prepare runs via the docker-entrypoint on each container boot.

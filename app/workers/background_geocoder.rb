@@ -1,6 +1,4 @@
-class BackgroundGeocoder
-	include Sidekiq::Worker
-
+class BackgroundGeocoder < ApplicationJob
 	def perform(subscription_id)
 		return unless subscription_id
 		subscription = Subscription.find(subscription_id)

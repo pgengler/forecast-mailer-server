@@ -1,0 +1,41 @@
+# See https://docs.docker.com/engine/reference/builder/#dockerignore-file for more details.
+
+# If you regularly need to add new dependencies, you may want to comment out
+# the following lines to avoid rebuilding the image every time you change them.
+# Gemfile Gemfile.lock
+
+# Ignore git directory.
+.git
+
+# Ignore bundler config.
+.bundle
+
+# Ignore all logfiles and tempfiles.
+log/**/*.log
+tmp
+
+# Ignore storage (uploaded files in local storage).
+storage
+
+# Ignore editor swap/backup files.
+**/*.swp
+**/*.swo
+**/*~
+
+# Ignore macOS .DS_Store files.
+**/.DS_Store
+
+# Ignore Kamal configuration and secrets.
+.kamal
+
+# Ignore credentials key (the encrypted file IS needed in the image).
+config/master.key
+
+# Ignore development/test-only files.
+test
+spec
+README.md
+.gitignore
+.dockerignore
+.ruby-gemset
+.tool-versions
