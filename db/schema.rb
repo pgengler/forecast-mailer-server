@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_08_29_022208) do
+ActiveRecord::Schema[8.1].define(version: 2026_09_02_163347) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -168,10 +168,12 @@ ActiveRecord::Schema[8.1].define(version: 2026_08_29_022208) do
     t.datetime "created_at"
     t.string "email"
     t.date "end"
+    t.date "last_forecast_sent_on"
     t.float "latitude"
     t.string "location"
     t.float "longitude"
     t.date "start"
+    t.string "timezone"
     t.string "units", default: "si", null: false
     t.datetime "updated_at"
   end
