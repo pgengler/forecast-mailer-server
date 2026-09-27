@@ -5,6 +5,7 @@ class BackgroundGeocoder < ApplicationJob
 		return unless subscription
 		subscription.geocode
 		if subscription.geocoded?
+			subscription.timezone = GoogleTimezone.lookup(subscription.latitude, subscription.longitude)
 			subscription.save
 		else
 			raise Geocoder::OverQueryLimitError

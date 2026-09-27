@@ -15,4 +15,4 @@ production:
     schedule: every hour at minute 12
   send_forecast_emails:
     command: "ForecastMailerWorker.send_forecast_emails"
-    schedule: every day at 10:30am
+    schedule: every 15 minutes
