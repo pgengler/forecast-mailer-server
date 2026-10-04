@@ -5,12 +5,7 @@ class WeatherForecastMailer < ActionMailer::Base
 	def daily(subscription, forecast)
 		@forecast = forecast
 		@location = subscription.location
-		@temperature_unit = case subscription.units
-		when 'ca', 'uk2', 'si'
-			'C'
-		when 'us'
-			'F'
-		end
+		@units = subscription.units
 		mail(to: subscription.email, subject: "Weather forecast for #{subscription.location}")
 	end
 end
