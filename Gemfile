@@ -7,7 +7,7 @@ ruby '4.0.6'
 # for this API-only app). This also avoids building unnecessary native extensions
 # like nio4r (actioncable) in the Docker image.
 gem 'railties', '~> 8.1.0'
-gem 'activesupport', '~> 8.1.0'
+gem 'activesupport', '~> 8.1.4'
 gem 'activemodel', '~> 8.1.0'
 gem 'activerecord', '~> 8.1.0'
 gem 'activejob', '~> 8.1.0'
